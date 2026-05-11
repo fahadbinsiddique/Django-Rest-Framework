@@ -62,7 +62,7 @@ class TeacherApiView(APIView):
         teacher_data= self.get_object(id)
         if teacher_data:
             serializer = TeacherSerializer(teacher_data,data=request.data)
-            if serializer.is_valid()
+            if serializer.is_valid():
                 serializer.save()
                 return Response(
                 {
@@ -72,7 +72,17 @@ class TeacherApiView(APIView):
                 },
                 status=status.HTTP_200_OK,
             )
-        def delete(self,request,id):
+
+    def delete(self,request,id):
+        teacher_data=self.get_object(id)
+        teacher_data.delete()
+        return Response(
+        {
+            "success": "True",
+            "message": "teacher data deleted Succesfully "
+        },
+        status=status.HTTP_200_OK,
+        )
             
 
 

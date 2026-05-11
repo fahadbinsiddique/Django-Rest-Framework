@@ -3,5 +3,5 @@ from teacherapp.views import *
 
 urlpatterns = [
     path("teacher-list/",TeacherApiView.as_view(),name='TeacherApiView'),
-    path("teacher-details/<int:id>/",TeacherDetailsApiView.as_view(),name='TeacherDetailsApiView')
+    path("teacher-details/<int:id>/",TeacherApiView.as_view(),name='TeacherDetailsApiView')
 ]
