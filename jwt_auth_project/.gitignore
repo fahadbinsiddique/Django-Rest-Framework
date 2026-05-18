@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+auth_app/__pycache__/
 __pycache__/
 *.py[codz]
 *$py.class
@@ -47,6 +48,7 @@ nosetests.xml
 coverage.xml
 *.cover
 *.py.cover
+*.lcov
 .hypothesis/
 .pytest_cache/
 cover/
@@ -122,13 +124,14 @@ ipython_config.py
 # pixi.lock
 #   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
 #   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
+.pixi/*
+!.pixi/config.toml
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
 # Celery stuff
-celerybeat-schedule
+celerybeat-schedule*
 celerybeat.pid
 
 # Redis
@@ -216,7 +219,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-jwt_auth_project/auth_app/__init__.py
-jwt_auth_project/jwt_auth_project/__init__.py
-jwt_auth_project/auth_app/migrations/0001_initial.py
-jwt_auth_project/auth_app/migrations/__init__.py
